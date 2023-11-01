@@ -5,6 +5,7 @@ contract X {
   function getRandom() external view returns (uint256) {
     bytes32 data = keccak256(abi.encodePacked(
       block.number,
+      block.timestamp,
       msg.sender
     ));
     return uint256(data);
