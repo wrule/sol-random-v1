@@ -3,11 +3,12 @@ pragma solidity ^0.8.20;
 
 contract X {
   function getRandom() external view returns (uint256) {
-    bytes32 data = keccak256(abi.encodePacked(
-      block.number,
-      block.timestamp,
-      msg.sender
-    ));
+    // bytes32 data = keccak256(abi.encodePacked(
+    //   block.number,
+    //   block.timestamp,
+    //   msg.sender
+    // ));
+    bytes32 data = blockhash(0);
     return uint256(data);
   }
 
