@@ -1,5 +1,6 @@
+import { ethers } from 'hardhat';
 import { X } from '../typechain-types';
-import { deployContract, getContract, init, meta } from './utils';
+import { deployContract, getContract, getSigner, init, meta } from './utils';
 
 async function main() {
   await meta();
@@ -7,6 +8,8 @@ async function main() {
   // const x = await deployContract<X>('X');
   const num = await x.getRandom();
   console.log(num);
+  const a = await getSigner().provider.getBlockNumber();
+  console.log(a);
 }
 
 async function dev() {

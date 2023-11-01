@@ -12,6 +12,18 @@ contract X {
     return uint256(data);
   }
 
+  function blockNumber() external view returns (uint256) {
+    return block.number;
+  }
+
+  function blockTimestamp() external view returns (uint256) {
+    return block.timestamp;
+  }
+
+  function getBlockhash(uint256 id) external view returns (bytes32) {
+    return blockhash(id);
+  }
+
   event sendMessageEvent(string message);
   function sendMessage(string memory message) public {
     emit sendMessageEvent(message);
