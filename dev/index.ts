@@ -16,6 +16,8 @@ async function main() {
   console.log(b);
   const c = await x.getBlockhash(a - 1n);
   console.log(c);
+  const d = await getSigner().provider.getBlockNumber();
+  console.log(d);
 }
 
 async function dev() {
