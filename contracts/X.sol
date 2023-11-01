@@ -2,6 +2,11 @@
 pragma solidity ^0.8.20;
 
 contract X {
+  function getRandom() external view returns (uint256) {
+    bytes32 data = keccak256(abi.encodePacked(msg.sender));
+    return uint256(data);
+  }
+
   event sendMessageEvent(string message);
   function sendMessage(string memory message) public {
     emit sendMessageEvent(message);
