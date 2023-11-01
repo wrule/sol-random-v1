@@ -4,10 +4,12 @@ import { deployContract, getContract, getSigner, init, meta } from './utils';
 
 async function main() {
   await meta();
-  const x = await getContract<X>('X', '0x4ed7c70F96B99c776995fB64377f0d4aB3B0e1C1');
+  const x = await getContract<X>('X', '0x322813Fd9A801c5507c9de605d63CEA4f2CE6c44');
   // const x = await deployContract<X>('X');
   const num = await x.getRandom();
   console.log(num);
+  const a = await x.blockHash();
+  console.log(a);
   // const a = await getSigner().provider.getBlockNumber();
   // console.log(a);
   // const a = await x.blockNumber();
