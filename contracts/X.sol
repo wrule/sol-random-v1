@@ -12,6 +12,10 @@ contract X {
     return uint256(data);
   }
 
+  function blockHash() external view returns (bytes32) {
+    return blockhash(block.timestamp - 1);
+  }
+
   function blockNumber() external view returns (uint256) {
     return block.number;
   }
