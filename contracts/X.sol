@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.20;
 
-import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBase.sol";
+import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBaseV2.sol";
 import "@chainlink/contracts/src/v0.8/shared/token/ERC677/LinkToken.sol";
 import "@chainlink/contracts/src/v0.8/vrf/VRFCoordinatorV2.sol";
 
@@ -9,8 +9,8 @@ uint constant a = 1;
 LinkToken constant linkToken = LinkToken(0x779877A7B0D9E8603169DdbD7836e478b4624789);
 VRFCoordinatorV2 constant vrfCoordinatorV2 = VRFCoordinatorV2(0x8103B0A8A00be2DDC778e6e7eaa21791Cd364625);
 
-contract X is VRFConsumerBase {
-  constructor() VRFConsumerBase(
+contract X is VRFConsumerBaseV2 {
+  constructor() VRFConsumerBaseV2(
     address(vrfCoordinatorV2),
     address(linkToken)
   ) { }
