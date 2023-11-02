@@ -14,14 +14,20 @@ contract X is VRFConsumerBase {
 
   event fulfillRandomnessEvent(bytes32, uint256);
   function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
+    requestId2 = requestId;
+    randomnessSave = randomness;
     emit fulfillRandomnessEvent(requestId, randomness);
   }
 
+  bytes32 public requestId1;
+  bytes32 public requestId2;
+  uint256 public randomnessSave;
+
   event getRandomRequestIdEvent(bytes32);
-  function getRandomRequestId() external returns (bytes32 requestId) {
-    bytes32 result = requestRandomness(keyHash, fee);
-    emit getRandomRequestIdEvent(result);
-    return result;
+  function getRandomRequestId() external returns (bytes32) {
+    requestId1 = requestRandomness(keyHash, fee);
+    emit getRandomRequestIdEvent(requestId1);
+    return requestId1;
   }
 
   function getRandom() external view returns (uint256) {
