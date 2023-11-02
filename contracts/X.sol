@@ -5,8 +5,8 @@ import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBase.sol";
 
 contract X is VRFConsumerBase {
   constructor() VRFConsumerBase(
-    0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B,
-    0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B
+    0x8103B0A8A00be2DDC778e6e7eaa21791Cd364625,
+    0x779877A7B0D9E8603169DdbD7836e478b4624789
   ) { }
 
   function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
