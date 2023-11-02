@@ -5,8 +5,8 @@ import { deployContract, getContract, getSigner, init, meta, watchContract } fro
 async function main() {
   await meta();
   const x = await deployContract<X>('X');
-  watchContract(x);
-  await x.getRandomRequestId();
+  // watchContract(x);
+  // await x.getRandomRequestId();
 }
 
 async function dev() {
