@@ -17,8 +17,11 @@ contract X is VRFConsumerBase {
     emit fulfillRandomnessEvent(requestId, randomness);
   }
 
+  event getRandomRequestIdEvent(bytes32);
   function getRandomRequestId() external returns (bytes32 requestId) {
-    return requestRandomness(keyHash, fee);
+    bytes32 result = requestRandomness(keyHash, fee);
+    emit getRandomRequestIdEvent(result);
+    return result;
   }
 
   function getRandom() external view returns (uint256) {
