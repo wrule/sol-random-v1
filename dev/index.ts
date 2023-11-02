@@ -4,7 +4,7 @@ import { deployContract, getContract, getSigner, init, meta, watchContract } fro
 
 async function main() {
   await meta();
-  const x = await getContract<X>('X', '0xa33b86BC21cb47177ED4a61E6949b860b54911Bd');
+  const x = await getContract<X>('X', '0x19d7c1fd38ebe7fc315ede2892ee6d460e7722cf');
   // const x = await deployContract<X>('X');
   watchContract(x);
   // const a = await x.blockNumber();
