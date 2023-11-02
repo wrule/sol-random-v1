@@ -9,6 +9,8 @@ contract X is VRFConsumerBase {
     0x779877A7B0D9E8603169DdbD7836e478b4624789
   ) { }
 
+  uint256 fee = 0.25 * 10 ** 18;
+
   function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
 
   }
