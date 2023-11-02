@@ -5,12 +5,12 @@ import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBase.sol";
 
 contract X is VRFConsumerBase {
   constructor() VRFConsumerBase(
-    0x8103B0A8A00be2DDC778e6e7eaa21791Cd364625,
-    0x779877A7B0D9E8603169DdbD7836e478b4624789
+    0x2bce784e69d2Ff36c71edcB9F88358dB0DfB55b4,
+    0x326C977E6efc84E512bB9C30f76E30c160eD06FB
   ) { }
 
-  uint256 fee = 0.25 * 10 ** 18;
-  bytes32 keyHash = 0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311;
+  uint256 fee = 0.1 * 10 ** 18;
+  bytes32 keyHash = 0x0476f9a745b61ea5c0ab224d3a6e4c99f0b02fce4da01143a4f70aa80ae76e8a;
 
   event fulfillRandomnessEvent(bytes32, uint256);
   function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
