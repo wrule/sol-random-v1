@@ -9,7 +9,9 @@ async function main() {
   watchContract(x);
   // const a = await x.blockNumber();
   // console.log(a);
-  const tx = await x.getRandomRequestId();
+  // const tx = await x.getRandomRequestId();
+  // console.log(tx.hash);
+  const tx = await await x.sendMessage('jimao hello');
   console.log(tx.hash);
 }
 
