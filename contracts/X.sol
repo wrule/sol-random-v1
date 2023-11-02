@@ -1,7 +1,18 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.20;
 
-contract X {
+import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBase.sol";
+
+contract X is VRFConsumerBase {
+  constructor() VRFConsumerBase(
+    0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B,
+    0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B
+  ) { }
+
+  function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
+
+  }
+
   function getRandom() external view returns (uint256) {
     bytes32 data = keccak256(abi.encodePacked(
       block.number,
